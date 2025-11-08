@@ -10,16 +10,24 @@
             margin: 0;
             font-family: Arial, sans-serif;
 
-            /* background color as fallback */
-            background-color: #000;
-
             /* ✅ Background photo */
-            background-image: url("images/Image_1.png"); /* path to your file */
-            background-size: cover;          /* fill the screen */
-            background-position: center;     /* center the image */
-            background-repeat: no-repeat;    /* no repeat */
+            background-image: url("images/Image_5.png"); /* your background photo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-            color: #fff; /* default text white */
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Soft overlay on top of background so text is readable */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35); /* make darker or lighter: 0.3–0.5 */
+            z-index: 0;
         }
 
         .page {
@@ -28,16 +36,18 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            z-index: 1; /* above overlay */
         }
 
-        /* Card with semi-transparent background so text is readable */
+        /* Card in the center */
         .content-box {
-            background: rgba(0, 0, 0, 0.55); /* overlay */
+            background: rgba(0, 0, 0, 0.55);
             padding: 24px 20px;
             border-radius: 18px;
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         header {
@@ -71,15 +81,22 @@
             font-size: 0.96rem;
         }
 
+        /* 📸 Photo gallery */
         .photo-wrapper {
             margin-top: 1.5rem;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
         .photo-wrapper img {
+            width: 240px;
             max-width: 100%;
+            height: auto;
             border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            object-fit: cover;
         }
 
         .back-link {
@@ -103,6 +120,10 @@
 
             h1 {
                 font-size: 1.6rem;
+            }
+
+            .photo-wrapper img {
+                width: 100%;
             }
         }
     </style>
@@ -133,9 +154,11 @@
             </p>
         </div>
 
+        <!-- 📸 Photo gallery -->
         <div class="photo-wrapper">
-            <!-- Use local image (make sure path is correct) -->
-            <img src="images/Image_1.png" alt="Our wedding photo">
+            <img src="images/Image_1.png" alt="Wedding moment 1">
+            <img src="images/Image_3.png" alt="Wedding moment 2">
+            <img src="images/Image_4.png" alt="Wedding moment 3">
         </div>
 
         <!-- Back to home page -->
