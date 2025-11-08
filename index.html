@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Wedding - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Reset & base */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            /* Fallback color */
+            background-color: #000;
+
+            /* Background photo */
+            background-image: url("images/Image_2.png"); /* your photo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: #fff; /* default text color */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay on top of the background image */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45); /* adjust 0.45 darker/lighter */
+            z-index: 0;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1; /* above overlay */
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            margin: 0.4rem 0;
+            font-size: 1rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .small {
+            font-size: 0.95rem;
+            color: #f7eaea; /* brighter than before */
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .date {
+            margin-top: 0.8rem;
+            font-weight: 600;
+        }
+
+        .place {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 1.8rem;
+            padding: 0.85rem 2.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            background: rgba(230, 168, 160, 0.9);
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-shadow: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .button:hover {
+            background: rgba(214, 143, 135, 1);
+        }
+
+        /* Optional small footer text */
+        .footer-note {
+            position: absolute;
+            bottom: 16px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 0.14em;
+            }
+
+            .button {
+                padding: 0.75rem 1.8rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <h1>Our Wedding</h1>
+    <p class="small">You are invited to celebrate with us</p>
+
+    <p class="date">Saturday, July 12, 2026</p>
+    <p class="place">Rose Garden Hall, Tokyo</p>
+
+    <!-- Button to go to next page -->
+    <a href="details.html" class="button">
+        View Details & Photos
+    </a>
+
+    <!-- Optional footer text -->
+    <div class="footer-note">
+        With love, Emma &amp; Noah
+    </div>
+</div>
+
+</body>
+</html>
